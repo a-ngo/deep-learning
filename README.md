@@ -1,4 +1,4 @@
-# Deep Learning Basics
+# Deep Learning
 These are my personal notes and code snippets while reading Deep Learning with Python from Francois Chollet
 (see https://github.com/fchollet/deep-learning-with-python-notebooks). The following topics are covered:
 - deep learning from first principles
