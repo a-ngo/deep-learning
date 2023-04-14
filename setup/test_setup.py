@@ -1,4 +1,4 @@
-# What version of Python do you have?
+#!/usr/bin/env python3
 import sys
 
 import tensorflow.keras
