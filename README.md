@@ -1,7 +1,12 @@
-# deep-learning-w-python
-These are my personal notes and code snippets while reading Deep Learning with Python from Francois Chollet.
-(see https://github.com/fchollet/deep-learning-with-python-notebooks)
-
+# Deep Learning Basics
+These are my personal notes and code snippets while reading Deep Learning with Python from Francois Chollet
+(see https://github.com/fchollet/deep-learning-with-python-notebooks). The following topics are covered:
+- deep learning from first principles
+- Keras deep dive
+- image classification and image segmentation
+- time series forecasting
+- text classification and machine translation
+- text generation, neural style transfer, and image generation
 
 ## Setup
 This setup is based on:
