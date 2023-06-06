@@ -1,1 +1,0 @@
-# Generative Deep Learning
