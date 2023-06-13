@@ -1,11 +1,12 @@
-name: tensorflow
+name: torch
 
 channels:
   - apple
   - conda-forge
+  - pytorch
 
 dependencies:
-    - python=3.10
+    - python=3.11
     - pip>=19.0
     - jupyter
     - scikit-learn
@@ -15,15 +16,13 @@ dependencies:
     - matplotlib
     - pillow
     - tqdm
-    - requests
     - h5py
     - pyyaml
-    - flask
-    - boto3
     - ipykernel
+    - pytorch
+    - torchvision
+    - torchaudio
     - pip:
-        - tensorflow-macos
-        - tensorflow-metal
         - bayesian-optimization
         - gym
         - kaggle
