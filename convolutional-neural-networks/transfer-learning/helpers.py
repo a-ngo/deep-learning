@@ -27,8 +27,8 @@ def get_data_location():
     Find the location of the dataset, either locally or in the Udacity workspace
     """
 
-    if os.path.exists("flowers"):
-        data_folder = "flowers"
+    if os.path.exists("./data/flowers"):
+        data_folder = "./data/flowers"
     elif os.path.exists("/data/DLND/C2/flowers"):
         data_folder = "/data/DLND/C2/flowers"
     else:
