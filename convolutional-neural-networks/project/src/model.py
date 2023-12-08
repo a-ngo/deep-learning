@@ -14,11 +14,46 @@ class MyModel(nn.Module):
         # the Dropout layer, use the variable "dropout" to indicate how much
         # to use (like nn.Dropout(p=dropout))
 
+        self.dropout_layer = nn.Dropout(dropout)
+        self.model = nn.Sequential(            
+            nn.Conv2d(3, 16, 3, padding=1),
+            # nn.BatchNorm2d(16),
+            nn.MaxPool2d(2, 2),
+            nn.ReLU(),
+            
+            nn.Conv2d(16, 32, 3, padding=1),
+            # nn.BatchNorm2d(32),
+            nn.MaxPool2d(2, 2),
+            nn.ReLU(),
+
+            nn.Conv2d(32, 64, 3, padding=1),
+            # nn.BatchNorm2d(64),
+            nn.MaxPool2d(2, 2),
+            nn.ReLU(),
+            
+            nn.Conv2d(64, 128, 3, padding=1),
+            # nn.BatchNorm2d(128),
+            nn.MaxPool2d(2, 2),
+            nn.ReLU(),
+            
+            nn.Flatten(),
+            
+            nn.Linear(14*14*128, 1024),
+            nn.ReLU(),
+            self.dropout_layer,
+            
+            nn.Linear(1024, 512),
+            nn.ReLU(),
+            self.dropout_layer,
+            
+            nn.Linear(512, num_classes),
+        )
+
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         # YOUR CODE HERE: process the input tensor through the
         # feature extractor, the pooling and the final linear
         # layers (if appropriate for the architecture chosen)
-        return x
+        return self.model(x)
 
 
 ######################################################################################
@@ -39,7 +74,10 @@ def test_model_construction(data_loaders):
     model = MyModel(num_classes=23, dropout=0.3)
 
     dataiter = iter(data_loaders["train"])
-    images, labels = dataiter.next()
+    images, labels = next(dataiter)
+
+    print(images)
+    print(labels)
 
     out = model(images)
 
